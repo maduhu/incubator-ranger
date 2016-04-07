@@ -1,0 +1,99 @@
+{
+	"id":10,
+	"name":"cdap",
+	"implClass":"org.apache.ranger.services.kafka.RangerServiceCDAP",
+	"label":"CDAP",
+	"description":"Cask Data Application Platform",
+	"resources":[
+		{
+			"itemId":1,
+			"name":"instance",
+			"type":"string",
+			"level":1,
+			"mandatory":true,
+			"lookupSupported":false,
+			"recursiveSupported":false,
+			"excludesSupported":true,
+			"matcher":"org.apache.ranger.plugin.resourcematcher.RangerDefaultResourceMatcher",
+			"matcherOptions":{
+				"wildCard":true,
+				"ignoreCase":true
+			},
+			"validationRegEx":"",
+			"validationMessage":"",
+			"uiHint":"",
+			"label":"Instance",
+			"description":"CDAP Instance"
+		}
+		
+	],
+	"accessTypes":[
+		{
+			"itemId":1,
+			"name":"read",
+			"label":"READ"
+			
+		},
+		{
+			"itemId":2,
+			"name":"write",
+			"label":"WRITE"
+			
+		},
+		{
+			"itemId":3,
+			"name":"execute",
+			"label":"EXECUTE"
+		},
+		{
+			"itemId":4,
+			"name":"admin",
+			"label":"ADMIN"
+		},
+		{
+			"itemId":5,
+			"name":"all",
+			"label":"ALL",
+			"impliedGrants":[
+				"read",
+				"write",
+				"admin"
+			]
+			
+		}
+	],
+	"configs":[
+		{
+			"itemId":1,
+			"name":"username",
+			"type":"string",
+			"mandatory":false,
+			"label":"Username"
+		},
+		{
+			"itemId":2,
+			"name":"password",
+			"type":"password",
+			"mandatory":false,
+			"label":"Password"
+		},
+		{
+			"itemId":3,
+			"name":"CDAP Router Host",
+			"type":"string",
+			"mandatory":true,
+			"defaultValue":"localhost:10000",
+			"label":"CDAP Connection URL"
+		}
+		
+	],
+	"enums":[
+		
+	],
+	"contextEnrichers":[
+		
+	],
+	"policyConditions":[
+		
+	]
+}

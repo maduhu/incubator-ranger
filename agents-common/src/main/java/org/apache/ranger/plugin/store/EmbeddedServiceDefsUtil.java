@@ -52,6 +52,7 @@ public class EmbeddedServiceDefsUtil {
 	public static final String EMBEDDED_SERVICEDEF_STORM_NAME = "storm";
 	public static final String EMBEDDED_SERVICEDEF_YARN_NAME  = "yarn";
 	public static final String EMBEDDED_SERVICEDEF_KAFKA_NAME = "kafka";
+	public static final String EMBEDDED_SERVICEDEF_CDAP_NAME = "cdap";
 	public static final String EMBEDDED_SERVICEDEF_SOLR_NAME  = "solr";
 	public static final String PROPERTY_CREATE_EMBEDDED_SERVICE_DEFS = "ranger.service.store.create.embedded.service-defs";
 
@@ -63,6 +64,7 @@ public class EmbeddedServiceDefsUtil {
 	public static final String STORM_IMPL_CLASS_NAME = "org.apache.ranger.services.storm.RangerServiceStorm";
 	public static final String YARN_IMPL_CLASS_NAME  = "org.apache.ranger.services.yarn.RangerServiceYarn";
 	public static final String KAFKA_IMPL_CLASS_NAME = "org.apache.ranger.services.kafka.RangerServiceKafka";
+	public static final String CDAP_IMPL_CLASS_NAME = "org.apache.ranger.services.cdap.RangerServiceCDAP";
 	public static final String SOLR_IMPL_CLASS_NAME  = "org.apache.ranger.services.solr.RangerServiceSolr";
 
 	private static EmbeddedServiceDefsUtil instance = new EmbeddedServiceDefsUtil();
@@ -76,6 +78,7 @@ public class EmbeddedServiceDefsUtil {
 	private RangerServiceDef stormServiceDef = null;
 	private RangerServiceDef yarnServiceDef  = null;
 	private RangerServiceDef kafkaServiceDef = null;
+	private RangerServiceDef cdapServiceDef = null;
 	private RangerServiceDef solrServiceDef  = null;
 
 	private RangerServiceDef tagServiceDef = null;
@@ -111,6 +114,7 @@ public class EmbeddedServiceDefsUtil {
 			stormServiceDef = getOrCreateServiceDef(store, EMBEDDED_SERVICEDEF_STORM_NAME);
 			yarnServiceDef  = getOrCreateServiceDef(store, EMBEDDED_SERVICEDEF_YARN_NAME);
 			kafkaServiceDef = getOrCreateServiceDef(store, EMBEDDED_SERVICEDEF_KAFKA_NAME);
+			cdapServiceDef = getOrCreateServiceDef(store, EMBEDDED_SERVICEDEF_CDAP_NAME);
 			solrServiceDef  = getOrCreateServiceDef(store, EMBEDDED_SERVICEDEF_SOLR_NAME);
 
 			tagServiceDef = getOrCreateServiceDef(store, EMBEDDED_SERVICEDEF_TAG_NAME);
@@ -154,6 +158,10 @@ public class EmbeddedServiceDefsUtil {
 	
 	public long getKafkaServiceDefId() {
 		return getId(kafkaServiceDef);
+	}
+
+	public long getCDAPServiceDefId() {
+		return getId(cdapServiceDef);
 	}
 
 	public long getSolrServiceDefId() {

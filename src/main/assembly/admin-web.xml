@@ -279,6 +279,19 @@
        				<include>org.apache.ranger:ranger-kafka-plugin</include>
      			</includes>
     		</moduleSet>
+
+    <moduleSet>
+      <binaries>
+        <includeDependencies>true</includeDependencies>
+        <outputDirectory>/ews/webapp/WEB-INF/classes/ranger-plugins/cdap</outputDirectory>
+        <unpack>false</unpack>
+        <directoryMode>755</directoryMode>
+        <fileMode>644</fileMode>
+      </binaries>
+      <includes>
+        <include>org.apache.ranger:ranger-cdap-plugin</include>
+      </includes>
+    </moduleSet>
     		
     		<moduleSet>
      			<binaries>

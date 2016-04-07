@@ -182,6 +182,8 @@ elif [ "${HCOMPONENT_NAME}" = "solr" ]; then
     HCOMPONENT_LIB_DIR=${HCOMPONENT_INSTALL_DIR}/solr-webapp/webapp/WEB-INF/lib
 elif [ "${HCOMPONENT_NAME}" = "kafka" ]; then
     HCOMPONENT_LIB_DIR=${HCOMPONENT_INSTALL_DIR}/libs
+elif [ "${HCOMPONENT_NAME}" = "cdap" ]; then
+    HCOMPONENT_LIB_DIR=${HCOMPONENT_INSTALL_DIR}/libs
 elif [ "${HCOMPONENT_NAME}" = "storm" ]; then
     HCOMPONENT_LIB_DIR=${HCOMPONENT_INSTALL_DIR}/extlib-daemon
 fi
